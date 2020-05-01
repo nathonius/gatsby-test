@@ -27,7 +27,13 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-typescript`
+    `gatsby-plugin-typescript`,
+    {
+      resolve: `gatsby-source-buttercms`,
+      options: {
+        authToken: `9ffd3dad4fd54423ad22bc3ce3e1a2fd6bbc9081`
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
