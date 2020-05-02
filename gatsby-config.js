@@ -28,13 +28,19 @@ module.exports = {
       }
     },
     `gatsby-plugin-typescript`,
-    `gatsby-plugin-graphql-codegen`,
     {
       resolve: `gatsby-source-buttercms`,
       options: {
         authToken: `9ffd3dad4fd54423ad22bc3ce3e1a2fd6bbc9081`
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`
+      }
+    },
+    `gatsby-plugin-graphql-codegen`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

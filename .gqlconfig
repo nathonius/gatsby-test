@@ -1,0 +1,31 @@
+ /* .gqlconfig */
+ {
+   schema: {
+     files: 'schemas/**/*.gql'
+   }
+ }
+You can use the string files: "**/*.gql" instead if you want to find any .gql file recursively in the workspace dir.
+
+To see the full configuration, check out the GQL project's docs.
+
+To enable autocomplete support within your code, add these lines to your .gqlconfig file. The query section of the config contains an array of file config with matchers. You can add more files by directing the EmbeddedQueryParser to run when your code within the startTag and endTag matches:
+
+ /* .gqlconfig */
+ {
+   schema: {
+     files: "**/*.gql"
+   },
+   query: {
+     files: [ /* define file paths which you'd like the gql parser to watch and give autocomplete suggestions for */
+       {
+         match: ['src/**/*.ts', 'src/**/*.tsx'], // match multiple extensions
+         parser: ['EmbeddedQueryParser', { startTag: 'graphql`', endTag: '`' }],
+       },
+       {
+         match: 'gatsby-node.js', // for js
+         parser: ['EmbeddedQueryParser', { startTag: 'graphql(`', endTag: '`)' }],
+         isRelay: true,
+       }
+     ],
+   },
+ }

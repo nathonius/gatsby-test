@@ -2396,6 +2396,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___display'
   | 'pluginCreator___pluginOptions___icon'
   | 'pluginCreator___pluginOptions___authToken'
+  | 'pluginCreator___pluginOptions___pathToConfigModule'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -2592,6 +2593,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___display'
   | 'pluginOptions___icon'
   | 'pluginOptions___authToken'
+  | 'pluginOptions___pathToConfigModule'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -2714,6 +2716,7 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>;
   icon?: Maybe<Scalars['String']>;
   authToken?: Maybe<Scalars['String']>;
+  pathToConfigModule?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -2727,6 +2730,7 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>;
   icon?: Maybe<StringQueryOperatorInput>;
   authToken?: Maybe<StringQueryOperatorInput>;
+  pathToConfigModule?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -2764,31 +2768,6 @@ export type StringQueryOperatorInput = {
   regex?: Maybe<Scalars['String']>;
   glob?: Maybe<Scalars['String']>;
 };
-
-export type Unnamed_1_QueryVariables = {};
-
-
-export type Unnamed_1_Query = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type SiteTitleQueryQueryVariables = {};
-
-
-export type SiteTitleQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
-
-export type Unnamed_2_QueryVariables = {};
-
-
-export type Unnamed_2_Query = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
-
-export type BlogPostBySlugQueryVariables = {
-  slug: Scalars['String'];
-};
-
-
-export type BlogPostBySlugQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }>, allButterPost: { edges: Array<{ node: (
-        Pick<Butter__Post, 'id' | 'body' | 'seo_title' | 'date'>
-        & { categories?: Maybe<Array<Maybe<Pick<Butter__PostCategories, 'name'>>>> }
-      ) }> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

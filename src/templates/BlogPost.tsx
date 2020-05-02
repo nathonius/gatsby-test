@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import { BlogPostBySlugQuery } from '../../graphql-types';
 
 interface BlogPostProps {
   data: any;
@@ -10,7 +11,8 @@ const BlogPost: React.FC<BlogPostProps> = props => {
   const post = props.data.allButterPost.edges[0].node;
   return (
     <div>
-      <h1>{post.seo_title}</h1>
+      <h2>{post.seo_title}</h2>
+      <div dangerouslySetInnerHTML={{ __html: post.body }} />
     </div>
   );
 };
